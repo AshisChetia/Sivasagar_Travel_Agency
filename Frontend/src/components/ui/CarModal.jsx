@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Button from './Button';
+import { generateCarBookingMessage } from '../../utils/whatsapp';
 
 const CarModal = ({ car, onClose }) => {
   // Prevent scrolling on the background when modal is open
@@ -38,7 +39,7 @@ const CarModal = ({ car, onClose }) => {
           <img 
             src={car.image} 
             alt={car.title} 
-            className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+            className="w-full h-full object-cover object-center"
           />
         </div>
 
@@ -97,7 +98,11 @@ const CarModal = ({ car, onClose }) => {
           </div>
 
           <div className="mt-auto pt-4">
-            <Button variant="primary" className="w-full gap-2 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all !bg-[#0f6048] hover:!bg-[#0c4a37]">
+            <Button 
+              variant="primary" 
+              className="w-full gap-2 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all !bg-[#0f6048] hover:!bg-[#0c4a37]"
+              onClick={() => window.open(generateCarBookingMessage(car.title, car.price), '_blank', 'noopener,noreferrer')}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
                 <path d="M8 12h.01"/>

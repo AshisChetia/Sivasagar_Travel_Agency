@@ -3,7 +3,7 @@ import { featuredServices } from '../../data/services';
 
 const ServicesSection = ({ services = featuredServices }) => {
   return (
-    <section className="w-full py-20 md:py-32 px-4 sm:px-8 md:px-16 bg-[#f8f9fa]">
+    <section className="w-full py-20 md:py-32 px-4 sm:px-8 md:px-16 bg-[#f0f2f5]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-primary tracking-tight mb-5">
@@ -22,10 +22,6 @@ const ServicesSection = ({ services = featuredServices }) => {
               </div>
               <h3 className="text-xl font-bold text-primary mb-4 font-heading">{service.title}</h3>
               <p className="text-tertiary text-sm leading-relaxed mb-8 flex-grow">{service.description}</p>
-              <a href="/services" className="text-secondary font-bold text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all w-fit">
-                Learn more 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
             </div>
           ))}
         </div>

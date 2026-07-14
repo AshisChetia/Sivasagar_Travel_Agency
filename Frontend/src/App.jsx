@@ -5,6 +5,8 @@ import Footer from './components/layout/Footer';
 import LandingPage from './pages/LandingPage';
 import FleetPage from './pages/FleetPage';
 import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import ToursPage from './pages/ToursPage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/fleet" element={<FleetPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/tours" element={<ToursPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
 

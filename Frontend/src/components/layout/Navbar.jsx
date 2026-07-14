@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('Home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.pathname === '/') setActiveLink('Home');
     else if (location.pathname === '/fleet') setActiveLink('Fleet');
     else if (location.pathname === '/services') setActiveLink('Services');
+    else if (location.pathname === '/tours') setActiveLink('Tours');
+    else if (location.pathname === '/contact') setActiveLink('Contact Us');
   }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Fleet', href: '/fleet' },
     { name: 'Services', href: '/services' },
-    { name: 'Tours', href: '#' },
+    { name: 'Tours', href: '/tours' },
   ];
 
   return (
@@ -71,7 +74,10 @@ const Navbar = () => {
         <Button 
           variant={activeLink === 'Contact Us' ? 'primary' : 'outline'} 
           className={`border-2 font-bold text-sm px-6 py-2 ml-2 transition-all ${activeLink === 'Contact Us' ? 'border-transparent shadow-md' : 'border-tertiary/40 hover:bg-tertiary/10'}`}
-          onClick={() => setActiveLink('Contact Us')}
+          onClick={() => {
+            setActiveLink('Contact Us');
+            navigate('/contact');
+          }}
         >
           Contact Us
         </Button>
@@ -104,6 +110,7 @@ const Navbar = () => {
               onClick={() => {
                 setActiveLink('Contact Us');
                 setIsMenuOpen(false);
+                navigate('/contact');
               }}
             >
               Contact Us
