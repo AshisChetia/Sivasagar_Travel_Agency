@@ -2,10 +2,10 @@
  * Utility functions for Phone and Email Links
  */
 
-export const PHONE_NUMBER = '+919876543210';
-export const DISPLAY_PHONE = '+91 98765 43210';
+export const PHONE_NUMBER = '+916001332646';
+export const DISPLAY_PHONE = '+91 60013 32646';
 
-export const EMAIL_ADDRESS = 'booking@sivasagartravel.com'; // Change this to your real email when needed
+export const EMAIL_ADDRESS = 'info@sivasagartravel.com'; // Change this to your real email when needed
 
 /**
  * Generates a clickable phone link

@@ -4,7 +4,7 @@
 
 // The company's main WhatsApp number (include country code without + or 00)
 // Using 91 for India and the dummy number from the UI
-export const WHATSAPP_NUMBER = '919876543210'; 
+export const WHATSAPP_NUMBER = '916001332646'; 
 
 /**
  * Generates a pre-filled WhatsApp link for a specific car booking
